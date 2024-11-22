@@ -1,0 +1,635 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Container {
+  overflow: hidden;
+  height: 2370px;
+}
+.video-container2 {
+  width: 100%;
+  border-radius: 10px;
+
+  /* لضمان ضبط الفيديو بشكل صحيح داخل الحاوية بعد التدوير */
+  transform-origin: center;
+  /* width: auto;
+  height: 100%;  */
+  position: relative;
+    
+}
+.video {
+  
+    display: block;
+    border-radius: 10px;
+}
+.logo {
+  position: relative;
+  right: -50%;
+  top: -1200px;
+}
+.navbar {
+  position: fixed;
+  top: 0; /* يبدأ خارج الشاشة */
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: top 0.6s ease; /* حركة سلسة عند التمرير */
+}
+.navbar nav {
+  display: flex;
+  gap: 20px;
+  
+}
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(0, 0, 0); /* لون الشريط */
+  transform: scaleX(0); /* يبدأ الشريط بحجم صفر */
+  transform-origin: left;
+  transition: transform 0.3s ease; /* حركة الشريط */
+}
+
+.navbar a.active::after, 
+.navbar a:hover::after {
+  transform: scaleX(1); /* يظهر الشريط عند التمرير أو النقر */
+}
+.navbar a:hover {
+  color: rgb(62, 57, 57); /* لون النص عند التمرير */
+}
+
+.navbar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
+  word-spacing: 5px;
+  transition: color 0.3s ease; /* انتقال لون النص عند الاختيار */
+  position: relative;
+  left: 45%;
+}
+.navbar img {
+  height: 30px;
+  position: relative;
+  left: 2%;
+}
+/* تنسيق الحاوية للزر */
+.but {
+  text-align: center;
+  position: relative;
+  bottom: 150px;
+}
+
+/* تصميم الزر */
+.but button {
+  background: linear-gradient(to left, #007BFF, #0056b3);
+  background-size: 200% 100%; /* اجعل الخلفية أكبر لتوفير حركة */
+  background-position: right bottom; /* البداية من اليمين */
+  color: white;
+  padding: 15px 70px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-position 0.4s ease, transform 0.3s ease;
+}
+
+/* تأثير عند مرور الماوس */
+.but button:hover {
+  background-position: left bottom; /* تحريك الخلفية إلى اليسار */
+  transform: scale(1.05); /* تكبير بسيط */
+}
+.Travel-conditions img {
+  width: 100%;
+}
+/* تأثير عند النقر */
+.but button:active {
+  background-position: left bottom;
+  transform: scale(0.98); /* تصغير بسيط */
+}
+.the-best-offers {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.animated-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  opacity: 0;
+  animation: fade 8s infinite;
+}
+
+.animated-image:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animated-image:nth-child(2) {
+  animation-delay: 4s;
+}
+
+@keyframes fade {
+  0%, 100% {
+      opacity: 0;
+  }
+  25%, 75% {
+      opacity: 1;
+  }
+}
+.the {
+  left: 75%;
+  position: relative;
+  top: 50px;
+  width: 17%;
+  font-size: 30px;
+
+  color: #1a008c;
+}
+.bntnt {
+  
+  position: relative;
+  top: 80px;
+  left: 15%;
+  
+}
+.bntnt {
+  margin-bottom: 20px;
+}
+
+.bntnt button {
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: solid 1px #ffffff;
+  font-size: 20px;
+  color: #1a008c;
+  font-family: 'Times New Roman', Times, serif;
+  transition: all 0.5s;
+}
+.bntnt button:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+.page-content {
+  border: 4px solid #0062ff94;
+  padding: 20px;
+  min-height: 200px;
+  position: absolute;
+  background-color: #ffffff;
+  width: 70%;
+  top: 1200px;
+  left: 10%;
+  border-radius: 5px;
+}
+/* تباعد بين العناوين والفقرات */
+.page-content h2 {
+  margin-bottom: 20px; /* مسافة بين العنوان h2 والعنصر التالي */
+}
+
+.page-content h3 {
+  margin-bottom: 15px; /* مسافة بين العنوان h3 والعنصر التالي */
+  position: relative;
+  bottom: 45px;
+  left: 20%;
+  font-size: 20px;
+}
+.page-content ul li {
+  font-size: 20px;
+}
+
+/* الحاوية التي تحتوي على عناصر الراديو */
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 200px;flex-direction: row;
+  left: 100px;
+  
+}
+
+/* تنسيق عناصر الراديو */
+input[type="radio"] {
+  position: relative;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #007BFF;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  
+}
+
+/* تأثير عند تحديد الراديو */
+input[type="radio"]:checked {
+  border-color: #28a745; /* تغيير لون الحدود عند التحديد */
+}
+
+/* التأثير المتحرك */
+input[type="radio"]:checked {
+  transform: scale(1.3); /* تكبير العنصر عند التحديد */
+}
+
+/* تنسيق تسميات الراديو */
+label {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.page-content p {
+  margin-bottom: 20px; /* مسافة بين الفقرات والعنصر التالي */
+}
+
+.page-content ul {
+  margin-bottom: 20px; /* مسافة بين القائمة والعنصر التالي */
+  padding-left: 20px; /* مسافة باتجاه اليسار لعناصر القائمة */
+}
+
+.page-content ul li {
+  margin-bottom: 10px; /* مسافة بين عناصر القائمة نفسها */
+}
+/* تنسيق محتوى الصفحة */
+.page-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+  min-height: 300px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الجدول */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* تنسيق النصوص */
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+/* تنسيق نموذج حالة الرحلة */
+.flight-status-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.flight-status-form label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.flight-status-form input[type="text"],
+.flight-status-form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.flight-status-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.flight-status-form button:hover {
+  background-color: #0056b3;
+}
+
+/* تنسيق نتائج الحالة */
+.status-results {
+  margin-top: 20px;
+}
+
+.status-results h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.status-results table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.status-results table, th, td {
+  border: 1px solid #ddd;
+}
+
+.status-results th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+.status-results th {
+  background-color: #007BFF;
+  color: white;
+}
+
+.status-results tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.status-results tr:hover {
+  background-color: #f1f1f1;
+}
+/* تنسيق نموذج استعراض الحجز */
+.booking-review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.booking-review-form label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.booking-review-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.booking-review-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.booking-review-form button:hover {
+  background-color: #0056b3;
+}
+
+/* تنسيق تفاصيل الحجز */
+.booking-details {
+  margin-top: 20px;
+}
+
+.booking-details h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.booking-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-details table, th, td {
+  border: 1px solid #ddd;
+}
+
+.booking-details th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+.booking-details th {
+  background-color: #007BFF;
+  color: white;
+}
+
+.booking-details tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.booking-details tr:hover {
+  background-color: #f1f1f1;
+}
+/* تنسيق إجراءات السفر */
+.procedures-list {
+  list-style-type: decimal;
+  margin: 20px 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.procedures-list li {
+  margin-bottom: 20px;
+}
+
+.procedures-list h3 {
+  color: #007BFF;
+  margin-bottom: 5px;
+  position: relative;
+  left: 40%;
+}
+
+.procedures-list p {
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+/* تنسيق الرسالة الترحيبية */
+.default-message {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.default-message h2 {
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.default-message p {
+  color: #333;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+
+/* تنسيق تذييل الموقع */
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #002b7f; /* لون خلفية التذييل */
+  color: white;
+  top: 500px;
+}
+
+.Airplane {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.317), rgba(7, 40, 255, 0.181)), url('../photo/nwesLetterCoverPhoto-AR.jpg');
+  width: 100%;
+  height: 700px; /* تعديل الارتفاع ليتناسب مع التذييل */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 20px;
+}
+
+.footer-section h2, .footer-section h3 {
+  margin-bottom: 15px;
+  color: #000000; /* لون مميز للعناوين */
+}
+
+.footer-section p, .footer-section ul {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  color: #1403ff;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  ;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 20px;
+  
+}
+
+.footer-section .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* زيادة المسافة بين الأيقونات */
+}
+
+.footer-section .social-icon {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: 30px; /* حجم الأيقونات */
+  padding: 15px; /* زيادة padding لتوفير مساحة أكبر للأيقونة */
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section .social-icon.facebook {
+  background-color: #3b5998; /* اللون الأزرق لفيسبوك */
+}
+
+.footer-section .social-icon.twitter {
+  background-color: #1da1f2; /* اللون الأزرق لتويتر */
+}
+
+.footer-section .social-icon.instagram {
+  background-color: #c13584; /* اللون الوردي لإنستغرام */
+}
+
+.footer-section .social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* تغيير الخلفية عند التمرير */
+  transform: scale(1.1); /* تكبير الأيقونة عند التمرير */
+}
+
+.footer-bottom {
+  background-color: #001b50; /* لون خلفية للتذييل السفلي */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #fff;
+}
